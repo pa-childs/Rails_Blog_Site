@@ -1,11 +1,12 @@
 <h1>Showing Article Details</h1>
 
-# flash could be added to application.html if it was desired in same spot on all pages
+<!-- flash could be added to application.html if it was desired in same spot on all pages-->
 <% flash.each do |name, message| %>
 
   <p style="color:blue;"><%= message %></p>
 
 <% end %>
 
+<p><strong>Title: </strong><%= @article.id %></p>
 <p><strong>Title: </strong><%= @article.title %></p>
 <p><strong>Description: </strong><%= @article.description %></p>

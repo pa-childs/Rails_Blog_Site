@@ -19,14 +19,21 @@ class ArticlesController < ApplicationController
 
   end
 
-  def create
+  def edit
 
+    # Need an instance created to avoid error when page loads (validaton check)
+    @article = Article.find(params[:id])
+
+  end
+
+  def create
     # Just shows the listed parameters on the screen
     # render plain: params[:article]
 
     # Whitelist the parameters that you wish to allow
     @article = Article.new(params.require(:article).permit(:title, :description))
     if @article.save
+
       flash[:notice] = "Article was successfully saved."
       # render plain: @article.inspect
 
@@ -36,8 +43,22 @@ class ArticlesController < ApplicationController
 
     else
 
+      # Go back to new page if something goes wrong
       render 'new'
 
+    end
+
+  end
+
+  def update
+    
+    @article = Article.find(params[:id])
+    if @article.update(params.require(:article).permit(:title, :description))
+      flash[:notice] = "Article was successfully updated."
+      redirect_to @article
+    else
+
+      render 'edit'
     end
 
   end
