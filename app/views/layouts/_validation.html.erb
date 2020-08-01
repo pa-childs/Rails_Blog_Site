@@ -1,0 +1,8 @@
+<p style="color:red;">Correct the following errors to submit change</p>
+<ul>
+
+<% @article.errors.full_messages.each do |message| %>
+
+  <li style="color:red;"><%= message %></li>
+
+<% end %>

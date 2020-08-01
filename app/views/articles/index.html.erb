@@ -1,10 +1,6 @@
 <h1>Articles List</h1>
 
-<% flash.each do |name, message| %>
-
-  <p style="color:blue;"><%= message %></p>
-
-<% end %>
+<%= render 'layouts/messages' %>
 
 <table>
   <thead>

@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def show
 
     # Show the article for the supplied ID
-    @article = Article.find(params[:id])
 
   end
 
@@ -25,8 +25,6 @@ class ArticlesController < ApplicationController
   def edit
 
     # Setup to edit the article for the supplied ID
-    # Need an instance created to avoid error when page loads (validaton check)
-    @article = Article.find(params[:id])
 
   end
 
@@ -38,7 +36,7 @@ class ArticlesController < ApplicationController
     # render plain: params[:article]
 
     # Whitelist the parameters that you wish to allow
-    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article = Article.new(article_params)
     if @article.save
 
       flash[:notice] = "Article was successfully saved."
@@ -60,10 +58,9 @@ class ArticlesController < ApplicationController
   def update
 
     # Update the article for the supplied ID, the reload the Article page
-    @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description))
+    if @article.update(article_params)
       flash[:notice] = "Article was successfully updated."
-      redirect_to @article
+      redirect_to article_path(@article)
     else
 
       # If something goes wrong, reload Edit page with validation messages
@@ -76,10 +73,23 @@ class ArticlesController < ApplicationController
   def destroy
 
     # Destroy the article for the supplied ID, then load the Articles page
-    @article = Article.find(params[:id])
     @article.destroy
     flash[:notice] = "Article was successfully deleted."
     redirect_to articles_path
+
+  end
+
+  private
+
+  def set_article
+
+    @article = Article.find(params[:id])
+
+  end
+
+  def article_params
+
+    params.require(:article).permit(:title, :description)
 
   end
 
