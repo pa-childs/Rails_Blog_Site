@@ -1,11 +1,18 @@
 <h1>Articles List</h1>
 
+<% flash.each do |name, message| %>
+
+  <p style="color:blue;"><%= message %></p>
+
+<% end %>
+
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Title</th>
       <th>Description</th>
-      <th>Actions</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -19,7 +26,7 @@
         <td><%= article.description %></td>
         <td><%= link_to 'Show', article_path(article.id) %></td>
         <td><%= link_to 'Edit', edit_article_path(article.id) %></td>
-        <td><%= link_to 'Delete', article_path(article.id), method: :delete %></td>
+        <td><%= link_to 'Delete', article_path(article.id), method: :delete, data: { confirm: "Are you sure?" }%></td>
       </tr>
 
     <% end %>

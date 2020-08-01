@@ -78,6 +78,7 @@ class ArticlesController < ApplicationController
     # Destroy the article for the supplied ID, then load the Articles page
     @article = Article.find(params[:id])
     @article.destroy
+    flash[:notice] = "Article was successfully deleted."
     redirect_to articles_path
 
   end
