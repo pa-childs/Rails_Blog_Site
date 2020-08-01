@@ -14,7 +14,8 @@ class ArticlesController < ApplicationController
 
   def new
 
-
+    # Need an instance created to avoid error when page loads (validaton check)
+    @article = Article.new
 
   end
 
@@ -25,11 +26,19 @@ class ArticlesController < ApplicationController
 
     # Whitelist the parameters that you wish to allow
     @article = Article.new(params.require(:article).permit(:title, :description))
-    @article.save
-    # render plain: @article.inspect
+    if @article.save
+      flash[:notice] = "Article was successfully saved."
+      # render plain: @article.inspect
 
-    # redirect_to article_path(@article)
-    redirect_to @article
+      redirect_to article_path(@article)
+      # Shorthand version
+      # redirect_to @article
+
+    else
+
+      render 'new'
+
+    end
 
   end
 

@@ -1,5 +1,20 @@
 <h1>Create New Article</h1>
 
+<% if @article.errors.any? %>
+
+  <h2>Correct the following errors to submit article</h2>
+  <ul>
+
+  <% @article.errors.full_messages.each do |message| %>
+
+    <li style="color:red;"><%= message %></li>
+
+  <% end %>
+
+  </ul>
+
+<% end %>
+
 <%= form_with scope: :article, url: articles_path, local: true do |f| %>
 
   <p>
