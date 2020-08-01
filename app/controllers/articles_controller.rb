@@ -20,7 +20,16 @@ class ArticlesController < ApplicationController
 
   def create
 
-    render plain: params[:article]
+    # Just shows the listed parameters on the screen
+    # render plain: params[:article]
+
+    # Whitelist the parameters that you wish to allow
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article.save
+    # render plain: @article.inspect
+
+    # redirect_to article_path(@article)
+    redirect_to @article
 
   end
 
