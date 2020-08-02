@@ -1,5 +1,61 @@
 @import 'bootstrap/dist/css/bootstrap';
 
+html,
+body {
+  height: 100%;
+}
+
+.button_style {
+  background-color: #A11D33;
+  border: 2px solid #B21E35;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.6s;
+}
+
+.button_style:hover {
+  background-color: #DA1E37;
+  border: 2px solid #B21E35;
+  color: #FFFFFF;
+}
+
+.jumbotron {
+  background-image: asset-url('ruby.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
+}
+
 .navbar {
-  background-color: #52B788 !important;
+  background-color: #641220 !important;
+}
+
+.nav-link {
+  color: #FFFFFF !important;
+}
+
+#home_container {
+    margin-top: 25px;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  background-color: #85182A;
+  flex-shrink: none;
 }
