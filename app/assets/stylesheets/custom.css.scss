@@ -5,6 +5,15 @@ body {
   height: 100%;
 }
 
+.article_link {
+  color: #A11D33;
+}
+
+.article_link:hover {
+  color: #E01E37;
+  text-decoration: none;
+}
+
 .button_style {
   background-color: #A11D33;
   border: 2px solid #B21E35;
@@ -14,12 +23,15 @@ body {
   display: inline-block;
   font-size: 16px;
   transition-duration: 0.6s;
+  border-radius: 10%;
+  padding: 5px 5px;
 }
 
 .button_style:hover {
-  background-color: #DA1E37;
+  background-color: #C71F37;
   border: 2px solid #B21E35;
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .jumbotron {
@@ -53,6 +65,7 @@ body {
 
 #page-content {
   flex: 1 0 auto;
+  background-color: lightgrey;
 }
 
 #sticky-footer {
