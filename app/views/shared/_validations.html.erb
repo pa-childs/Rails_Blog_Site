@@ -1,10 +1,10 @@
-<% if @article.errors.any? %>
+<% if object.errors.any? %>
 
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <h4 class="alert-heading">Correct the following errors to submit change</h4>
     <ul>
 
-    <% @article.errors.full_messages.each do |message| %>
+    <% object.errors.full_messages.each do |message| %>
 
       <li style="color:red;"><%= message %></li>
 
