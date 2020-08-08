@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   def index
 
     # List all the existing Articles
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 5)
 
   end
 
