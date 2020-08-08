@@ -1,3 +1,11 @@
 <h1 class="text-center mt-4"><%= @user.username %>'s Articles</h1>
 
+<%= render 'layouts/messages' %>
+
+<div class="text-center mt-4">
+
+  <%= link_to "Edit Profile", edit_user_path(@user), class: "btn my-2 my-sm-0 button_style" %>
+
+</div>
+
 <%= render 'articles/article_list' %>
