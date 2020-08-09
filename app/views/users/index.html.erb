@@ -8,31 +8,39 @@
 
 <div class="container">
 
-<% @users.each do |user| %>
-<div class="row justify-content-md-center">
-  <div class="col-8 mt-4">
-    <div class="card text-center shadow mb-5 bg-white rounded">
-      <div class="card-header font-italic">
+  <% @users.each do |user| %>
 
-        <%= link_to user.username, user_path(user) %>
+  <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
+      <div class="card text-center shadow mb-5 bg-white rounded">
+        <div class="card-header font-italic">
 
-      </div>
-      <div class="card-body">
-        <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+          <%= link_to user.username, user_path(user) %>
 
-        <%= link_to 'View Profile', user_path(user), class: "button_style" %>
-        <%= link_to 'Edit Profile', edit_user_path(user), class: "button_style" %>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <%= pluralize(user.articles.count, "article") %>
+          </p>
 
-      </div>
-      <div class="card-footer text-muted">
-        <small>
-          Joined <%= time_ago_in_words(user.created_at) %>
-        </small>
+          <%= link_to 'View Profile', user_path(user), class: "button_style" %>
+
+          <% if logged_in? and user == current_user %>
+              <%= link_to 'Edit Profile', edit_user_path(user), class: "button_style" %>
+          <% end %>
+
+        </div>
+        <div class="card-footer text-muted">
+          <small>
+            Joined <%= time_ago_in_words(user.created_at) %>
+          </small>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<% end %>
+
+  <% end %>
+
 </div>
 
 <div class="flickr_pagination mb-4">
