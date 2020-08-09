@@ -4,9 +4,9 @@
 
 <div class="text-center mt-4 mb-4">
 
-  <% if logged_in? and @user == current_user %>
-      <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn my-2 my-sm-0 button_style" %>
-      <%= link_to 'Delete Profile', user_path(@user), class: "btn my-2 my-sm-0 button_warn_style", method: :delete, data: {confirm: "Are you sure?"} %>
+  <% if logged_in? and (@user == current_user or current_user.admin?) %>
+      <%= link_to 'Edit Profile', edit_user_path(@user), class: "button_style" %>
+      <%= link_to 'Delete Profile', user_path(@user), class: "button_warn_style", method: :delete, data: {confirm: "Are you sure you want to delete the user account and all the associated articles?"} %>
   <% end %>
 
 </div>

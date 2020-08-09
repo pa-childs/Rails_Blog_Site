@@ -31,7 +31,13 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Profile: <%= current_user.username %>
+
+          <% if current_user.admin? %>
+            Admin: <%= current_user.username %>
+          <% else %>
+            Profile: <%= current_user.username %>
+          <% end %>
+
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
