@@ -35,6 +35,27 @@ body {
   text-decoration: none;
 }
 
+.button_warn_style {
+  background-color: #E01E37;
+  border: 2px solid #000000;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.6s;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+.button_warn_style:hover {
+  background-color: #641220;
+  border: 2px solid #000000;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 /* Needed for pagination styling */
 .flickr_pagination {
   text-align: center;

@@ -6,6 +6,7 @@
 
   <% if logged_in? and @user == current_user %>
       <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn my-2 my-sm-0 button_style" %>
+      <%= link_to 'Delete Profile', user_path(@user), class: "btn my-2 my-sm-0 button_warn_style", method: :delete, data: {confirm: "Are you sure?"} %>
   <% end %>
 
 </div>
