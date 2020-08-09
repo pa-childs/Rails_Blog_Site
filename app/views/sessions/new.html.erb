@@ -8,31 +8,31 @@
 
       <%= form_with(scope: :session, url: login_path, local:true) do |f| %>
 
-      <div class="form-group row">
+        <div class="form-group row">
 
-        <%= f.label :email, class: "col-2 col-form-label" %>
+          <%= f.label :email, class: "col-2 col-form-label" %>
 
-        <div class="col-10">
+          <div class="col-10">
 
-          <%= f.email_field :email, class: "form-control", placeholder: "Enter your Email" %>
+            <%= f.email_field :email, class: "form-control", placeholder: "Enter your Email" %>
+
+          </div>
+        </div>
+        <div class="form-group row">
+
+          <%= f.label :password, class: "col-2 col-form-label" %>
+
+          <div class="col-10">
+
+            <%= f.password_field :password, class: "form-control", placeholder: "Enter your Password" %>
+
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+
+          <%= f.submit "Login", class: "button_style" %>
 
         </div>
-      </div>
-      <div class="form-group row">
-
-        <%= f.label :password, class: "col-2 col-form-label" %>
-
-        <div class="col-10">
-
-          <%= f.password_field :password, class: "form-control", placeholder: "Enter your Password" %>
-
-        </div>
-      </div>
-      <div class="form-group row justify-content-center">
-
-        <%= f.submit "Login", class: "btn my-2 my-sm-0 button_style" %>
-
-      </div>
 
       <% end %>
 
