@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   # Below are all the REST routes that can be exposed
   # resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
 
-  # User pages
+  # User pagess
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
 
-  # Login page
+  # Login pages
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+
+  # Categories pages
+  resources :categories, except: [:destroy]
 end
