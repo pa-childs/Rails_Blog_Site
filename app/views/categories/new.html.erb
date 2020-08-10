@@ -1,0 +1,34 @@
+<h1 class="text-center mt-4">Create New Category</h1>
+
+<div class="container">
+  <div class="row justify-content-center mb-4 frame">
+    <div class="col-12">
+
+      <%= render 'shared/validations', object: @category %>
+      <%= form_with(model: @category, local: true) do |f| %>
+
+      <div class="form-group row">
+
+        <%= f.label :name, "Category Name", class: "col-2 col-form-label" %>
+
+        <div class="col-10">
+
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter a category name" %>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+
+        <%= f.submit class: "button_style" %>
+
+        <div class="col-2">
+
+          <%= link_to "Cancel", articles_path, class: "button_style" %>
+
+        </div>
+      </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
