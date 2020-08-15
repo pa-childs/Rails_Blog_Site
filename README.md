@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Rails Blog Site
+This code is for a Rails project that was part of an Udemy course:
 
-Things you may want to cover:
+#### The Complete Ruby on Rails Developer Course
+https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/
 
-* Ruby version
 
-* System dependencies
+It was completed using:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rails: 6.0.3
+* Ruby: 2.7.0
+* Bootstrap: 4.5.0
