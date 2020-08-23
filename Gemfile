@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 # Add pagination ability
 gem 'will_paginate', '~> 3.1.0'
+# Make Rails Console more helpful displaying data
+gem 'hirb'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
