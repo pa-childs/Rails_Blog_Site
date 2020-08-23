@@ -59,14 +59,10 @@
 
           <%= link_to "Articles By...", user_path(current_user), class: "dropdown-item" %>
           <%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %>
+          <%= link_to 'Logout', logout_path, class: "dropdown-item", method: :delete %>
 
         </div>
       </li>
-        <li class="nav-item">
-
-          <%= link_to 'Logout', logout_path, class: "nav-link", method: :delete %>
-
-        </li>
 
       <% else %>
 
