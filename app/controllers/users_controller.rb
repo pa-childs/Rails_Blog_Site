@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
 
-    @articles = @user.articles.paginate(page: params[:page], per_page: 5)
+    @articles = @user.articles.order('articles.created_at DESC').paginate(page: params[:page], per_page: 5)
 
   end
 
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
 
-    if verify_recaptcha(model: @user) && @user.save
+    if verify_recaptcha(model: @user) and @user.save
 
       session[:user_id] = @user.id
       logger.info "Created profile for: #{@user.username}: #{@user.email}"
