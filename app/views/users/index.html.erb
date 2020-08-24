@@ -1,4 +1,4 @@
-<h1 class="text-center mt-4">Bloggers</h1>
+<h1 class="text-center mt-4"> <%= t('.blogger_title') %> </h1>
 
 <div class="flickr_pagination">
 
@@ -20,24 +20,24 @@
         </div>
         <div class="card-body">
           <p class="card-text">
-            <%= pluralize(user.articles.count, "article") %>
+            <%= pluralize(user.articles.count, t('.article_text')) %>
           </p>
 
-          <%= link_to 'View Profile', user_path(user), class: "button_style" %>
+          <%= link_to t('.view_profile_button'), user_path(user), class: "button_style" %>
 
           <% if logged_in? %>
             <% if user == current_user or current_user.admin? %>
-              <%= link_to 'Edit Profile', edit_user_path(user), class: "button_style" %>
+              <%= link_to t('.edit_profile_button'), edit_user_path(user), class: "button_style" %>
             <% end %>
             <% if current_user.admin? %>
-              <%= link_to 'Delete Profile', user_path(user), class: "button_warn_style", method: :delete, data: {confirm: "Are you sure you want to delete the user account and all the associated articles?"} %>
+              <%= link_to t('.delete_profile_button'), user_path(user), class: "button_warn_style", method: :delete, data: {confirm: t('.delete_confirm_message')} %>
             <% end %>
           <% end %>
 
         </div>
         <div class="card-footer text-muted">
           <small>
-            Joined <%= time_ago_in_words(user.created_at) %>
+            <%= t('.joined_text') %> <%= time_ago_in_words(user.created_at) %>
           </small>
         </div>
       </div>

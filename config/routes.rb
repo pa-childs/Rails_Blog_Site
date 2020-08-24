@@ -1,22 +1,26 @@
 Rails.application.routes.draw do
-  # Static pages
-  root 'pages#home'
-  get 'about', to: 'pages#about'
 
-  # Articles pages
-  resources :articles
-  # Below are all the REST routes that can be exposed
-  # resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+  # Scoped to place locale in URL instead of at the end
+  # If now setting included in URL the default is used
+  scope "(:locale)", locale: /en|es|fr/ do
+    # Static pages
+    get '/:locale' => 'pages#home'
+    root to: 'pages#home'
+    get 'about', to: 'pages#about'
 
-  # User pagess
-  get 'signup', to: 'users#new'
-  resources :users, except: [:new]
+    # Articles pages
+    resources :articles
 
-  # Login pages
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+    # User pagess
+    get 'signup', to: 'users#new'
+    resources :users, except: [:new]
 
-  # Categories pages
-  resources :categories, except: [:destroy]
+    # Login pages
+    get 'login', to: 'sessions#new'
+    post 'login', to: 'sessions#create'
+    delete 'logout', to: 'sessions#destroy'
+
+    # Categories pages
+    resources :categories, except: [:destroy]
+  end
 end

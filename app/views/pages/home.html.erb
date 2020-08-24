@@ -3,10 +3,10 @@
   <%= render 'layouts/messages' %>
 
   <div class="jumbotron text-center text-white">
-    <h1 class="display-4">Rails Blog</h1>
-    <p class="lead">This is sample Rails 6 application.  It makes use of Bootstrap to help with the design and style of the website.</p>
+    <h1 class="display-4"> <%= t('.banner_title') %> </h1>
+    <p class="lead"> <%= t('.banner_description') %> </p>
 
-    <%= link_to "Sign Up", signup_path, class: "button_style" %>
+    <%= link_to t('.sign_up_button'), signup_path, class: "button_style" %>
 
   </div>
 </div>

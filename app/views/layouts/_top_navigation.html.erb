@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <%= link_to "Rails Blog", root_path, class: "navbar-brand", id: "logo" %>
+  <%= link_to t('.rails_blog_link'), root_path, class: "navbar-brand", id: "logo" %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,33 +10,37 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
 
-        <%= link_to 'Bloggers', users_path, class: "nav-link" %>
+        <%= link_to t('.bloggers_link'), users_path, class: "nav-link" %>
 
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Articles
+
+          <%= t('.articles_dropdown') %>
+
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-          <%= link_to "Blog  Articles", articles_path, class: "dropdown-item" %>
+          <%= link_to t('.blog_articles_link'), articles_path, class: "dropdown-item" %>
 
           <% if logged_in? %>
-            <%= link_to "Create New Article", new_article_path, class: "dropdown-item" %>
+            <%= link_to t('.create_new_article_link'), new_article_path, class: "dropdown-item" %>
           <% end %>
 
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categories
+
+          <%= t('.categories_dropdown') %>
+
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-          <%= link_to "Categories", categories_path, class: "dropdown-item" %>
+          <%= link_to t('.categories_link'), categories_path, class: "dropdown-item" %>
 
           <% if logged_in? and current_user.admin? %>
-            <%= link_to "Create New Category", new_category_path, class: "dropdown-item" %>
+            <%= link_to t('.create_new_category_link'), new_category_path, class: "dropdown-item" %>
           <% end %>
 
         </div>
@@ -49,17 +53,17 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
           <% if current_user.admin? %>
-            Admin: <%= current_user.username %>
+            <%= t('.admin') %>: <%= current_user.username %>
           <% else %>
-            Profile: <%= current_user.username %>
+            <%= t('.profile') %>: <%= current_user.username %>
           <% end %>
 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-          <%= link_to "Articles By...", user_path(current_user), class: "dropdown-item" %>
-          <%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %>
-          <%= link_to 'Logout', logout_path, class: "dropdown-item", method: :delete %>
+          <%= link_to t('.articles_by_link'), user_path(current_user), class: "dropdown-item" %>
+          <%= link_to t('.edit_profile_link'), edit_user_path(current_user), class: "dropdown-item" %>
+          <%= link_to t('.logout_link'), logout_path, class: "dropdown-item", method: :delete %>
 
         </div>
       </li>
@@ -68,30 +72,22 @@
 
         <li class="nav-item">
 
-          <%= link_to 'Login', login_path, class: "nav-link" %>
+          <%= link_to t('.login_link'), login_path, class: "nav-link" %>
 
         </li>
         <li class="nav-item">
 
-          <%= link_to "Sign Up", signup_path, class: "nav-link" %>
+          <%= link_to t('.sign_up_link'), signup_path, class: "nav-link" %>
 
         </li>
 
       <% end %>
 
-      <!--
-      <li class="nav-item">
-
-        <%= link_to 'About', about_path, class: "nav-link" %>
-
-      </li>
-    -->
-
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="button_style"  type="submit">Search</button>
+      <button class="button_style"  type="submit"> <%= t('.search_button') %> </button>
     </form>
 
   </div>

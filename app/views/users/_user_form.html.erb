@@ -7,30 +7,30 @@
 
       <div class="form-group row">
 
-        <%= f.label :username, "Name*", class: "col-2 col-form-label" %>
+        <%= f.label :username, t('.name_label'), class: "col-2 col-form-label" %>
 
         <div class="col-10">
 
-          <%= f.text_field :username, class: "form-control", placeholder: "Enter a Username" %>
+          <%= f.text_field :username, class: "form-control", placeholder: t('.name_placeholder') %>
         </div>
       </div>
       <div class="form-group row">
 
-        <%= f.label :email, "Email*", class: "col-2 col-form-label" %>
+        <%= f.label :email, t('.email_label'), class: "col-2 col-form-label" %>
 
         <div class="col-10">
 
-          <%= f.email_field :email, class: "form-control", placeholder: "Enter your Email" %>
+          <%= f.email_field :email, class: "form-control", placeholder: t('.email_placeholder') %>
 
         </div>
       </div>
       <div class="form-group row">
 
-        <%= f.label :password, "Password*", class: "col-2 col-form-label" %>
+        <%= f.label :password, t('.password_label'), class: "col-2 col-form-label" %>
 
         <div class="col-10">
 
-          <%= f.password_field :password, class: "form-control", placeholder: "Choose a Password" %>
+          <%= f.password_field :password, class: "form-control", placeholder: t('.password_placeholder') %>
 
         </div>
       </div>
@@ -51,11 +51,11 @@
 
       <div class="form-group row justify-content-center">
 
-        <%= f.submit(@user.new_record? ? "Sign Up" : "Update Account", class: "button_style") %>
+        <%= f.submit(@user.new_record? ? t('.sign_up_button') : t('.update_account_button'), class: "button_style") %>
 
         <div class="col-2">
 
-          <%= link_to "Cancel", @user.new_record? ? root_path : users_path, class: "button_style" %>
+          <%= link_to t('.cancel_button'), @user.new_record? ? root_path : users_path, class: "button_style" %>
 
         </div>
       </div>

@@ -1,12 +1,12 @@
-<h1 class="text-center mt-4">Articles By <%= @user.username %></h1>
+<h1 class="text-center mt-4"> <%= t('.articles_by_title') %> <%= @user.username %> </h1>
 
 <%= render 'layouts/messages' %>
 
 <div class="text-center mt-4 mb-4">
 
   <% if logged_in? and (@user == current_user or current_user.admin?) %>
-      <%= link_to 'Edit Profile', edit_user_path(@user), class: "button_style" %>
-      <%= link_to 'Delete Profile', user_path(@user), class: "button_warn_style", method: :delete, data: {confirm: "Are you sure you want to delete the user account and all the associated articles?"} %>
+      <%= link_to t('.edit_profile_button'), edit_user_path(@user), class: "button_style" %>
+      <%= link_to t('.delete_profile_button'), user_path(@user), class: "button_warn_style", method: :delete, data: {confirm: t('.delete_confirm_message')} %>
   <% end %>
 
 </div>

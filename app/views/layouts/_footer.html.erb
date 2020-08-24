@@ -1,7 +1,28 @@
 <footer id="sticky-footer" class="py-4 text-white">
-  <div class="container text-center">
-    <small>
-      Copyright &copy <%= Time.zone.now.year %> <%= link_to "Rails Blog", root_path, class: "text-white"%>
-    </small>
+  <div class="container d-flex justify-content-between">
+    <div class="col-6 d-flex justify-content-start">
+      <div class="d-inline my-auto">
+        <small>
+
+          <%= t('.copyright') %> &copy <%= Time.zone.now.year %>
+
+        </small>
+      </div>
+      <div class="d-inline my-auto">
+        <small>
+
+          <%= link_to t('.copyright_holder_link'), root_path, class: "nav-link"%>
+
+        </small>
+      </div>
+    </div>
+
+    <div class="col-6 my-auto d-flex justify-content-end">
+      <small>
+
+        <%= link_to t('.about_rails_blog_link'), about_path, class: "nav-link" %>
+
+      </small>
+    </div>
   </div>
 </footer>

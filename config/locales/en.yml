@@ -30,4 +30,78 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      browser_tab_title: Rails Blog
+    footer:
+      about_rails_blog_link: About Rails Blog
+      copyright: Copyright
+      copyright_holder_link: Rails Blog
+    top_navigation:
+      admin: Admin
+      articles_dropdown: Articles
+      articles_by_link: Articles By...
+      blog_articles_link: Blog Articles
+      bloggers_link: Bloggers
+      categories_dropdown: Categories
+      categories_link: Article Categories
+      create_new_article_link: Create New Article
+      create_new_category_link: Create New Category
+      edit_profile_link: Edit Profile
+      login_link: Login
+      logout_link: Logout
+      profile: Profile
+      rails_blog_link: Rails Blog
+      search_button: Search
+      sign_up_link: Sign Up
+  pages:
+    about:
+      about_title: Rails Blog
+      about_text: "This is a test application created in Rails 6.  It contains the following features:"
+      list_authentication: Authentication - Using Bcrypt
+      list_localization: Localization - UI displays in English and Spanish
+      list_recaptcha: Recaptcha - Confirm non-bot user creation
+    home:
+      banner_title: Rails Blog
+      banner_description: This is sample Rails 6 application. It makes use of Bootstrap to help with the design and style of the website.
+      sign_up_button: Sign Up
+  sessions:
+    new:
+      email_label: Email*
+      email_placeholder: Enter your Email
+      login_title: Login
+      password_label: Password*
+      password_placeholder: Enter your Password
+      login_button: Login
+  shared:
+    validations:
+      alert_part_1: The following error(s) prevented the
+      alert_part_2: from being saved.
+  users:
+    edit:
+      edit_title: Edit Profile
+    index:
+      article_text: article
+      blogger_title: Bloggers
+      delete_confirm_message: Are you sure you want to delete the user account and all the associated articles?
+      delete_profile_button: Delete Profile
+      edit_profile_button: Edit Profile
+      joined_text: Joined
+      view_profile_button: View Profile
+    new:
+      title: Sign Up for Rails Blog
+    show:
+      articles_by_title: Articles By
+      delete_confirm_message: Are you sure you want to delete the user account and all the associated articles?
+      delete_profile_button: Delete Profile
+      edit_profile_button: Edit Profile
+    user_form:
+      cancel_button: Cancel
+      email_label: Email*
+      email_placeholder: Enter your Email
+      name_label: Name*
+      name_placeholder: Enter your Name
+      password_label: Password*
+      password_placeholder: Choose a Password
+      sign_up_button: Sign Up
+      update_account_button: Update Account
