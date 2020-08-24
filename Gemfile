@@ -5,6 +5,9 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+
+# Handle ENV variables
+gem 'dotenv-rails', :require => 'dotenv/rails-now', :groups => [:development, :test]
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -23,6 +26,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1.0'
 # Make Rails Console more helpful displaying data
 gem 'hirb'
+# Help with recaptcha
+gem 'recaptcha'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
