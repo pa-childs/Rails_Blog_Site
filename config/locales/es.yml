@@ -1,0 +1,283 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+es:
+  activerecord:
+    models:
+      article: artículo
+      category: categoría
+      user: usuario
+    attributes:
+      article:
+        title: Título
+        description: Descripción
+      category:
+        name: Nombre
+      user:
+        email: Email
+        password: Contraseña
+        username: Nombre
+    errors:
+      models:
+        article:
+          attributes:
+            title:
+              blank: no puede estar en blanco
+              too_short: es demasiado corto (mínimo 6 caracteres)
+              too_long: es demasiado largo (el máximo es de 100 caracteres)
+            description:
+              blank: no puede estar en blanco
+              too_short: es demasiado corto (mínimo 10 caracteres)
+              too_long: es demasiado largo (el máximo es de 1000 caracteres)
+        category:
+          attributes:
+            name:
+              blank: no puede estar en blanco
+              too_short: es demasiado corto (mínimo 3 caracteres)
+              too_long: es demasiado largo (el máximo es de 25 caracteres)
+        user:
+          attributes:
+            email:
+              blank: no puede estar en blanco
+              invalid: es inválido
+              taken: ya se ha tomado
+              too_long: es demasiado largo (el máximo es de 100 caracteres)
+            password:
+              blank: no puede estar en blanco
+              too_short: es demasiado corto (mínimo 8 caracteres)
+              too_long: es demasiado largo (el máximo es de 25 caracteres)
+            username:
+              blank: no puede estar en blanco
+              taken: ya se ha tomado
+              too_short: es demasiado corto (mínimo 8 caracteres)
+              too_long: es demasiado largo (el máximo es de 25 caracteres)
+  application:
+    require_user:
+      warning_text: Debe iniciar sesión para realizar esa acción.
+  articles:
+    article_form:
+      categories_label: Categorías
+      cancel_button: Cancelar
+      create_article_button: Crear Artículo
+      description_label: Descripción*
+      description_placeholder: Ingrese una Descripción del Artículo
+      title_lable: Título*
+      title_placeholder: Ingrese un Título de Artículo
+      update_article_button: Actualizar Artículo
+    article_list:
+      ago_text: hace
+      confirm_text: ¿Estas seguro?
+      created_text: Creado
+      delete_button: Eliminar
+      edit_button: Editar
+      edited_text: editado
+      view_button: Ver
+    create:
+      article_created_successfully_text: El artículo se guardó correctamente.
+    destory:
+      article_deleted_successfully_text: El artículo se eliminó correctamente.
+    edit:
+      page_title: Editar Artículo
+    index:
+      page_title: Artículos de Blog
+    new:
+      page_title: Crear Nuevo Artículo
+    require_same_user:
+      warning_text: Solo puede editar o eliminar sus propios artículos.
+    show:
+      ago_text: hace
+      confirm_text: ¿Estas seguro?
+      created_text: Creado
+      delete_button: Eliminar
+      edit_button: Editar
+      edited_text: editado
+    update:
+      article_updated_successfully_text: El artículo se actualizó correctamente.
+  categories:
+    category_form:
+      cancel_button: Cancelar
+      category_name_label: Nombre de la Categoría*
+      category_name_placeholder: Ingrese un Nombre de Categoría
+      create_category_button: Crear Categoría
+      update_category_button: Actualizar Categoría
+    create:
+      category_created_successfully_text: La categoría se guardó correctamente.
+    edit:
+      page_title: Editar Categoria
+    index:
+      ago_text: hace
+      article_text: artículo
+      created_text: Creado
+      edited_text: editado
+      page_title: Categorías
+    new:
+      page_title: Crear Nueva Categoría
+    require_admin:
+      warning_text: Solo los administradores pueden realizar esa acción.
+    show:
+      page_title: "Categoría:"
+      edit_category: Editar Categoria
+    update:
+      category_updated_successfully_text: La categoría se actualizó correctamente.
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente una hora
+        other: aproximadamente %{count} horas
+      about_x_months:
+        one: al rededor de un mes
+        other: unos %{count} meses
+      about_x_years:
+        one: como un año
+        other: alrededor de %{count} años
+      almost_x_years:
+        one: casi un año
+        other: casi %{count} años
+      half_a_minute: medio minuto
+      less_than_x_minutes:
+        zero: menos de un minuto
+        one: menos de un minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        zero: menos de un segundo
+        one: menos de un segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mas de un año
+        other: mas de %{count} años
+      x_days:
+        one: 1 día
+        other: "%{count} dias"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mes
+        other: "%{count} meses"
+      x_years:
+        one: un año
+        other: "%{count} años"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+  layouts:
+    application:
+      browser_tab_title: Blog de Rieles
+    footer:
+      about_rails_blog_link: Acerca del Blog de Rieles
+      copyright: Derechos de autor
+      copyright_holder_link: Blog de Rieles
+    top_navigation:
+      admin: Administrador
+      articles_dropdown: Artículos
+      articles_by_link: Artículos De...
+      blog_articles_link: Artículos de Blog
+      bloggers_link: Blogueros
+      categories_dropdown: Categorías
+      categories_link: Categorías de Artículos
+      create_new_article_link: Crear Nuevo Artículo
+      create_new_category_link: Crear Nueva Categoría
+      edit_profile_link: Editar perfil
+      login_link: Login
+      logout_link: Cerrar sesión
+      profile: Perfil
+      rails_blog_link: Blog de Rieles
+      search_button: Buscar
+      sign_up_link: Regístrate
+  pages:
+    about:
+      about_text: "Esta es una aplicación de prueba creada en Rieles 6. Contiene las siguientes características:"
+      list_authentication: "Autenticación: Uso de Bcrypt"
+      list_localization: "Localización: La interfaz de usuario se muestra en inglés y español"
+      list_recaptcha: "Recaptcha: Confirmar la creación de usuarios que no sean bot"
+      page_title: Blog de Rieles
+    home:
+      banner_title: Blog de Rieles
+      banner_description: Esta es una aplicación de muestra de Rieles 6. Utiliza Bootstrap para ayudar con el diseño y el estilo del sitio web.
+      sign_up_button: Regístrate
+  recaptcha:
+    errors:
+      verification_failed: 'reCAPTCHA fue incorrecto, inténtelo de nuevo.'
+      recaptcha_unreachable: 'reCAPTCHA error del servidor de verificación, inténtelo de nuevo.'
+  sessions:
+    create:
+      login_successful_text: Conectado con éxito.
+      login_unsuccessful_text: Correo email o contraseña no válidos.
+    destroy:
+      logout_successful_text: Cerrar sesión correctamente.
+    new:
+      email_label: Email*
+      email_placeholder: Ingresa tu Email
+      page_title: Login
+      password_label: Contraseña*
+      password_placeholder: Ingresa tu Contraseña
+      login_button: Login
+  shared:
+    validations:
+      alert_part_1: Los siguientes errores impidieron que
+      alert_part_2: de ser salvo.
+  users:
+    create:
+      account_create_successfully_text: fue creado con éxito.
+    destory:
+      account_deleted_successfully_text: La cuenta y todos los artículos asociados se han eliminado.
+    edit:
+      edit_title: Editar Perfil
+    index:
+      ago_text: hace
+      article_text: artículo
+      delete_confirm_message: ¿Está seguro de que desea eliminar la cuenta de usuario y todos los artículos asociados?
+      delete_profile_button: Borrar Perfil
+      edit_profile_button: Editar Perfil
+      joined_text: Unido
+      page_title: Blogueros
+      view_profile_button: Ver Perfil
+    new:
+      page_title: Regístrese en el Blog de Rieles
+    require_same_user:
+      warning_text: Solo puede editar o eliminar su propio perfil.
+    show:
+      delete_confirm_message: ¿Está seguro de que desea eliminar la cuenta de usuario y todos los artículos asociados?
+      delete_profile_button: Borrar Perfil
+      edit_profile_button: Editar Perfil
+      page_title: Artículos De
+    update:
+      account_updated_successfully_text: La información de su cuenta se actualizó correctamente.
+    user_form:
+      cancel_button: Cancelar
+      email_label: Email*
+      email_placeholder: Ingresa tu Email
+      name_label: Nombre*
+      name_placeholder: Introduzca su Nombre
+      password_label: Contraseña*
+      password_placeholder: Elije una Contraseña
+      sign_up_button: Regístrate
+      update_account_button: Actualizar Cuenta

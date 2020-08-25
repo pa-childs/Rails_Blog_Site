@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # Scoped to place locale in URL instead of at the end
   # If now setting included in URL the default is used
-  scope "(:locale)", locale: /en|es|fr/ do
+  scope "(:locale)", locale: /en|es/ do
     # Static pages
     get '/:locale' => 'pages#home'
     root to: 'pages#home'

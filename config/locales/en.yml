@@ -30,6 +30,55 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    models:
+      article: article
+      category: category
+      user: user
+    attributes:
+      article:
+        title: Title
+        description: Description
+      category:
+        name: Name
+      user:
+        email: Email
+        password: Password
+        username: Name
+    errors:
+      models:
+        article:
+          attributes:
+            title:
+              blank: can't be blank
+              too_short: is too short (minimum is 6 characters)
+              too_long: is too long (maximum is 100 characters)
+            description:
+              blank: can't be blank
+              too_short: is too short (minimum is 10 characters)
+              too_long: is too long (maximum is 1000 characters)
+        category:
+          attributes:
+            name:
+              blank: can't be blank
+              too_short: is too short (minimum is 3 characters)
+              too_long: is too long (maximum is 25 characters)
+        user:
+          attributes:
+            email:
+              blank: can't be blank
+              invalid: is invalid
+              taken: has already been taken
+              too_long: is too long (maximum is 100 characters)
+            password:
+              blank: can't be blank
+              too_short: is too short (minimum is 8 characters)
+              too_long: is too long (maximum is 25 characters)
+            username:
+              blank: can't be blank
+              taken: has already been taken
+              too_short: is too short (minimum is 8 characters)
+              too_long: is too long (maximum is 25 characters)
   application:
     require_user:
       warning_text: You must be logged in to perform that action.
@@ -98,6 +147,47 @@ en:
       edit_category: Edit Category
     update:
       category_updated_successfully_text: Category was successfully updated.
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about one hour
+        other: about %{count} hours
+      about_x_months:
+        one: around a month
+        other: about %{count} months
+      about_x_years:
+        one: about a year
+        other: about %{count} two
+      almost_x_years:
+        one: almost a year
+        other: almost %{count} year
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        zero: less than a minute
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        zero: less than a second
+        one: less than a second
+        other: less than %{count} seconds
+      over_x_years:
+        one: more than a year
+        other: more than %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_years:
+        one: 1 year
+        other: "%{count} years"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
   layouts:
     application:
       browser_tab_title: Rails Blog
@@ -125,18 +215,22 @@ en:
   pages:
     about:
       about_text: "This is a test application created in Rails 6.  It contains the following features:"
-      list_authentication: Authentication - Using Bcrypt
-      list_localization: Localization - UI displays in English and Spanish
-      list_recaptcha: Recaptcha - Confirm non-bot user creation
+      list_authentication: "Authentication: Using Bcrypt"
+      list_localization: "Localization: UI displays in English and Spanish"
+      list_recaptcha: "Recaptcha: Confirm non-bot user creation"
       page_title: Rails Blog
     home:
       banner_title: Rails Blog
       banner_description: This is sample Rails 6 application. It makes use of Bootstrap to help with the design and style of the website.
       sign_up_button: Sign Up
+  recaptcha:
+    errors:
+      verification_failed: 'reCAPTCHA was incorrect, please try again.'
+      recaptcha_unreachable: 'reCAPTCHA verification server error, please try again.'
   sessions:
     create:
       login_successful_text: Logged in successfully.
-      login_unsuccessful_text: Invalid username or password.
+      login_unsuccessful_text: Invalid email or password.
     destroy:
       logout_successful_text: Logged out successfully.
     new:
@@ -158,6 +252,7 @@ en:
     edit:
       edit_title: Edit Profile
     index:
+      ago_text: ago
       article_text: article
       delete_confirm_message: Are you sure you want to delete the user account and all the associated articles?
       delete_profile_button: Delete Profile

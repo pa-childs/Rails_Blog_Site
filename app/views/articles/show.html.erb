@@ -29,7 +29,7 @@
           <% if logged_in? and (@article.user == current_user or current_user.admin?) %>
 
             <%= link_to t('.edit_button'), edit_article_path(@article.id), class: "button_style" %>
-            <%= link_to t('.delete_button'), article_path(@article.id), method: :delete, data: { confirm: t('.comfirm_text') }, class: "button_style" %>
+            <%= link_to t('.delete_button'), article_path(@article.id), method: :delete, data: { confirm: t('.confirm_text') }, class: "button_style" %>
 
           <% end %>
 

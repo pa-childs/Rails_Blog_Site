@@ -25,7 +25,7 @@
           </div>
           <div class="card-footer text-muted">
             <small>
-              t('.created_text') <%= time_ago_in_words(category.created_at) %> t('.ago_text'), t('.edited_text') <%= time_ago_in_words(category.updated_at) %> t('.ago_text')
+              <%= t('.created_text') %> <%= time_ago_in_words(category.created_at) %> <%= t('.ago_text') %>, <%= t('.edited_text') %> <%= time_ago_in_words(category.updated_at) %> <%= t('.ago_text') %>
             </small>
           </div>
         </div>
