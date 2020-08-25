@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     if @article.save
 
-      flash[:notice] = "Article was successfully saved."
+      flash[:notice] = t('.article_created_successfully_text')
       # render plain: @article.inspect
 
       redirect_to article_path(@article)
@@ -63,7 +63,7 @@ class ArticlesController < ApplicationController
 
     # Update the article for the supplied ID, the reload the Article page
     if @article.update(article_params)
-      flash[:notice] = "Article was successfully updated."
+      flash[:notice] = t('.article_updated_successfully_text')
       redirect_to article_path(@article)
     else
 
@@ -78,7 +78,7 @@ class ArticlesController < ApplicationController
 
     # Destroy the article for the supplied ID, then load the Articles page
     @article.destroy
-    flash[:notice] = "Article was successfully deleted."
+    flash[:notice] = t('.article_deleted_successfully_text')
     redirect_to articles_path
 
   end
@@ -101,7 +101,7 @@ class ArticlesController < ApplicationController
 
     if current_user != @article.user and !current_user.admin?
 
-      flash[:alert] = "You can only edit or delete your own articles."
+      flash[:alert] = t('.warning_text')
       redirect_to @article
 
     end

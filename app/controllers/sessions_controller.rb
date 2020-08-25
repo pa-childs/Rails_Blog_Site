@@ -10,12 +10,12 @@ class SessionsController < ApplicationController
     if user and user.authenticate(params[:session][:password])
 
       session[:user_id] = user.id
-      flash[:notice] = "Logged in successfully."
+      flash[:notice] = t('.login_successful_text')
       redirect_to user
 
     else
 
-      flash.now[:alert] = "Invalid username or password."
+      flash.now[:alert] = t('.login_unsuccessful_text')
       render 'new'
 
     end
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
   def destroy
 
     session[:user_id] = nil
-    flash[:notice] = "Logged out."
+    flash[:notice] = t('.logout_successful_text')
     redirect_to root_path
 
   end

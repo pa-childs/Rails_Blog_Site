@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
 
     if @category.update(category_params)
 
-      flash[:notice] = "Category name updated successfully."
+      flash[:notice] = t('.category_updated_successfully_text')
       redirect_to @category
 
     else
@@ -44,7 +44,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     if @category.save
 
-      flash[:notice] = "Category was successfully saved."
+      flash[:notice] = t('.category_created_successfully_text')
 
       redirect_to @category
 
@@ -75,7 +75,7 @@ class CategoriesController < ApplicationController
 
     if !(logged_in? && current_user.admin?)
 
-      flash[:alert] = "Only Admins can perform that action."
+      flash[:alert] = t('.warning_text')
 
       redirect_to categories_path
 

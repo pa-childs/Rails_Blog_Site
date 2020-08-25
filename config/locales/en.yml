@@ -30,6 +30,74 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  application:
+    require_user:
+      warning_text: You must be logged in to perform that action.
+  articles:
+    article_form:
+      categories_label: Categories
+      cancel_button: Cancel
+      create_article_button: Create Article
+      description_label: Description*
+      description_placeholder: Enter an Article Description
+      title_lable: Title*
+      title_placeholder: Enter an Article Title
+      update_article_button: Update Article
+    article_list:
+      ago_text: ago
+      confirm_text: Are you sure?
+      created_text: Created
+      delete_button: Delete
+      edit_button: Edit
+      edited_text: edited
+      view_button: View
+    create:
+      article_created_successfully_text: Article was successfully saved.
+    destory:
+      article_deleted_successfully_text: Article was successfully deleted.
+    edit:
+      page_title: Edit Article
+    index:
+      page_title: Blog Articles
+    new:
+      page_title: Create New Article
+    require_same_user:
+      warning_text: You can only edit or delete your own articles.
+    show:
+      ago_text: ago
+      confirm_text: Are you sure?
+      created_text: Created
+      delete_button: Delete
+      edit_button: Edit
+      edited_text: edited
+    update:
+      article_updated_successfully_text: Article was successfully updated.
+  categories:
+    category_form:
+      cancel_button: Cancel
+      category_name_label: Category Name*
+      category_name_placeholder: Enter a Category Name
+      create_category_button: Create Category
+      update_category_button: Update Category
+    create:
+      category_created_successfully_text: Category was successfully saved.
+    edit:
+      page_title: Edit Category
+    index:
+      ago_text: ago
+      article_text: article
+      created_text: Created
+      edited_text: edited
+      page_title: Categories
+    new:
+      page_title: Create New Category
+    require_admin:
+      warning_text: Only Admins can perform that action.
+    show:
+      page_title: "Category:"
+      edit_category: Edit Category
+    update:
+      category_updated_successfully_text: Category was successfully updated.
   layouts:
     application:
       browser_tab_title: Rails Blog
@@ -56,20 +124,25 @@ en:
       sign_up_link: Sign Up
   pages:
     about:
-      about_title: Rails Blog
       about_text: "This is a test application created in Rails 6.  It contains the following features:"
       list_authentication: Authentication - Using Bcrypt
       list_localization: Localization - UI displays in English and Spanish
       list_recaptcha: Recaptcha - Confirm non-bot user creation
+      page_title: Rails Blog
     home:
       banner_title: Rails Blog
       banner_description: This is sample Rails 6 application. It makes use of Bootstrap to help with the design and style of the website.
       sign_up_button: Sign Up
   sessions:
+    create:
+      login_successful_text: Logged in successfully.
+      login_unsuccessful_text: Invalid username or password.
+    destroy:
+      logout_successful_text: Logged out successfully.
     new:
       email_label: Email*
       email_placeholder: Enter your Email
-      login_title: Login
+      page_title: Login
       password_label: Password*
       password_placeholder: Enter your Password
       login_button: Login
@@ -78,23 +151,31 @@ en:
       alert_part_1: The following error(s) prevented the
       alert_part_2: from being saved.
   users:
+    create:
+      account_create_successfully_text: was successfully created.
+    destory:
+      account_deleted_successfully_text: The Account and all associated Articles have been deleted.
     edit:
       edit_title: Edit Profile
     index:
       article_text: article
-      blogger_title: Bloggers
       delete_confirm_message: Are you sure you want to delete the user account and all the associated articles?
       delete_profile_button: Delete Profile
       edit_profile_button: Edit Profile
       joined_text: Joined
+      page_title: Bloggers
       view_profile_button: View Profile
     new:
-      title: Sign Up for Rails Blog
+      page_title: Sign Up for Rails Blog
+    require_same_user:
+      warning_text: You can only edit or delete your own profile.
     show:
-      articles_by_title: Articles By
       delete_confirm_message: Are you sure you want to delete the user account and all the associated articles?
       delete_profile_button: Delete Profile
       edit_profile_button: Edit Profile
+      page_title: Articles By
+    update:
+      account_updated_successfully_text: Your account information was successfully updated.
     user_form:
       cancel_button: Cancel
       email_label: Email*

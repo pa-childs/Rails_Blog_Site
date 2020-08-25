@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
 
       logger.info "Updated profile for: #{@user.username}: #{@user.email}"
-      flash[:notice] ="Your account information was successfully updated."
+      flash[:notice] = t('.account_updated_successfully_text')
       redirect_to @user
 
     else
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
 
       session[:user_id] = @user.id
       logger.info "Created profile for: #{@user.username}: #{@user.email}"
-      flash[:notice] = "#{@user.username} was successfully created."
+      flash[:notice] = "#{@user.username} #{t('.account_create_successfully_text')}"
       redirect_to articles_path
 
     else
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
     @user.destroy
     session[:user_id] = nil if @user == current_user
     logger.info "Removed profile for: #{@user.username}: #{@user.email}"
-    flash[:notice] = "The Account and all associated Articles have been deleted."
+    flash[:notice] = t('.account_deleted_successfully_text')
     redirect_to articles_path
 
   end
@@ -89,7 +89,7 @@ class UsersController < ApplicationController
 
     if current_user != @user && !current_user.admin?
 
-      flash[:alert] = "You can only edit or delete your own profile."
+      flash[:alert] = t('.warning_text')
       redirect_to @user
 
     end

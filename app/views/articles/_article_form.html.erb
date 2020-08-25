@@ -5,48 +5,47 @@
       <%= render 'shared/validations', object: @article %>
       <%= form_with(model: @article, local: true) do |f| %>
 
-      <div class="form-group row">
+        <div class="form-group row">
 
-        <%= f.label :title, "Title*", class: "col-2 col-form-label" %>
+          <%= f.label :title, t('.title_lable'), class: "col-2 col-form-label" %>
 
-        <div class="col-10">
+          <div class="col-10">
 
-          <%= f.text_field :title, class: "form-control", placeholder: "Title of Article" %>
+            <%= f.text_field :title, class: "form-control", placeholder: t('.title_placeholder') %>
 
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
+        <div class="form-group row">
 
-        <%= f.label :description, "Description*", class: "col-2 col-form-label" %>
+          <%= f.label :description, t('.description_label'), class: "col-2 col-form-label" %>
 
-        <div class="col-10">
+          <div class="col-10">
 
-          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Description" %>
+            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: t('.description_placeholder') %>
 
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
+        <div class="form-group row">
 
-        <%= f.label :category, "Categories", class: "col-2 col-form-label" %>
+          <%= f.label :category, t('.categories_label'), class: "col-2 col-form-label" %>
 
-        <div class="col-10">
+          <div class="col-10">
 
-          <%= f.collection_select(:category_ids, Category.all, :id, :name, {:prompt => ""}, {:multiple => true, size: 3, class: "custom-select"}) %>
+            <%= f.collection_select(:category_ids, Category.all, :id, :name, {:prompt => ""}, {:multiple => true, size: 3, class: "custom-select"}) %>
 
-
+          </div>
         </div>
-      </div>
 
-      <div class="form-group row justify-content-center">
+        <div class="form-group row justify-content-center">
 
-        <%= f.submit class: "button_style" %>
+          <%= f.submit(@article.new_record? ? t('.create_article_button') : t('.update_article_button'), class: "button_style") %>
 
-        <div class="col-2">
+          <div class="col-2">
 
-          <%= link_to "Cancel", articles_path, class: "button_style" %>
+            <%= link_to t('.cancel_button'), articles_path, class: "button_style" %>
 
+          </div>
         </div>
-      </div>
 
       <% end %>
 

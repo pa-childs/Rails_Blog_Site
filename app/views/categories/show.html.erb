@@ -1,9 +1,11 @@
-<h1 class="text-center mt-4">Category: <%= @category.name %></h1>
+<h1 class="text-center mt-4"> <%= t('.page_title') %> <%= @category.name %></h1>
+
+<%= render 'layouts/messages' %>
 
 <div class="text-center mt-4 mb-4">
 
   <% if logged_in? and (current_user.admin?) %>
-      <%= link_to 'Edit Category', edit_category_path(@category), class: "button_style" %>
+      <%= link_to t('.edit_category'), edit_category_path(@category), class: "button_style" %>
   <% end %>
 
 </div>

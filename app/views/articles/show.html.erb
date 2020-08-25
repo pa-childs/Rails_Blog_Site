@@ -28,15 +28,15 @@
 
           <% if logged_in? and (@article.user == current_user or current_user.admin?) %>
 
-            <%= link_to 'Edit', edit_article_path(@article.id), class: "button_style" %>
-            <%= link_to 'Delete', article_path(@article.id), method: :delete, data: { confirm: "Are you sure?" }, class: "button_style" %>
+            <%= link_to t('.edit_button'), edit_article_path(@article.id), class: "button_style" %>
+            <%= link_to t('.delete_button'), article_path(@article.id), method: :delete, data: { confirm: t('.comfirm_text') }, class: "button_style" %>
 
           <% end %>
 
         </div>
         <div class="card-footer text-muted">
           <small>
-            Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago
+            <%= t('.created_text') %> <%= time_ago_in_words(@article.created_at) %> <%= t('.ago_text') %>, <%= t('.edited_text') %> <%= time_ago_in_words(@article.updated_at) %> <%= t('.ago_text') %>
           </small>
         </div>
       </div>

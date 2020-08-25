@@ -1,4 +1,4 @@
-<h1 class="text-center mt-4">Categories</h1>
+<h1 class="text-center mt-4"> <%= t('.page_title') %> </h1>
 
 <%= render 'layouts/messages' %>
 
@@ -20,12 +20,12 @@
 
             </h5>
             <p class="card-text">
-              <%= pluralize(category.articles.count, "article") %>
+              <%= pluralize(category.articles.count, t('.article_text')) %>
             </p>
           </div>
           <div class="card-footer text-muted">
             <small>
-              Created <%= time_ago_in_words(category.created_at) %> ago, edited <%= time_ago_in_words(category.updated_at) %> ago
+              t('.created_text') <%= time_ago_in_words(category.created_at) %> t('.ago_text'), t('.edited_text') <%= time_ago_in_words(category.updated_at) %> t('.ago_text')
             </small>
           </div>
         </div>
