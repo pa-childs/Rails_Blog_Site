@@ -251,6 +251,7 @@ en:
       account_deleted_successfully_text: The Account and all associated Articles have been deleted.
     edit:
       edit_title: Edit Profile
+      warning_text: You can only edit or delete your own profile.
     index:
       ago_text: ago
       article_text: article
@@ -262,8 +263,6 @@ en:
       view_profile_button: View Profile
     new:
       page_title: Sign Up for Rails Blog
-    require_same_user:
-      warning_text: You can only edit or delete your own profile.
     show:
       delete_confirm_message: Are you sure you want to delete the user account and all the associated articles?
       delete_profile_button: Delete Profile

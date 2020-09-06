@@ -251,6 +251,7 @@ es:
       account_deleted_successfully_text: La cuenta y todos los artículos asociados se han eliminado.
     edit:
       edit_title: Editar Perfil
+      warning_text: Solo puede editar o eliminar su propio perfil.
     index:
       ago_text: hace
       article_text: artículo
@@ -262,8 +263,6 @@ es:
       view_profile_button: Ver Perfil
     new:
       page_title: Regístrese en el Blog de Rieles
-    require_same_user:
-      warning_text: Solo puede editar o eliminar su propio perfil.
     show:
       delete_confirm_message: ¿Está seguro de que desea eliminar la cuenta de usuario y todos los artículos asociados?
       delete_profile_button: Borrar Perfil
