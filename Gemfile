@@ -28,6 +28,8 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'hirb'
 # Help with recaptcha
 gem 'recaptcha'
+# Ruby static code analyzer and code formatter
+gem 'rubocop', require: false
 
 
 # Use Active Storage variant
