@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Controller that defines user CRUD
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
@@ -70,8 +72,7 @@ class UsersController < ApplicationController
   def require_same_user
     return unless current_user != @user && !current_user.admin?
 
-      flash[:alert] = t('.warning_text')
-      redirect_to @user
-
+    flash[:alert] = t('.warning_text')
+    redirect_to @user
   end
 end
