@@ -132,6 +132,7 @@ es:
       category_created_successfully_text: La categoría se guardó correctamente.
     edit:
       page_title: Editar Categoria
+      warning_text: Solo los administradores pueden realizar esa acción.
     index:
       ago_text: hace
       article_text: artículo
@@ -140,7 +141,6 @@ es:
       page_title: Categorías
     new:
       page_title: Crear Nueva Categoría
-    require_admin:
       warning_text: Solo los administradores pueden realizar esa acción.
     show:
       page_title: "Categoría:"

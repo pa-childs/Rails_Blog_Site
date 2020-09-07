@@ -132,6 +132,7 @@ en:
       category_created_successfully_text: Category was successfully saved.
     edit:
       page_title: Edit Category
+      warning_text: Only Admins can perform that action.
     index:
       ago_text: ago
       article_text: article
@@ -140,7 +141,6 @@ en:
       page_title: Categories
     new:
       page_title: Create New Category
-    require_admin:
       warning_text: Only Admins can perform that action.
     show:
       page_title: "Category:"
